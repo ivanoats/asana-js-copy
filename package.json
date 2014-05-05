@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/ivanoats/asana-js-copy/issues"
   },
-  "homepage": "https://github.com/ivanoats/asana-js-copy"
+  "homepage": "https://github.com/ivanoats/asana-js-copy",
+  "dependencies": {
+    "asana-api": "^0.2.0",
+    "yargs": "^1.2.1"
+  }
 }

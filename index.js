@@ -1,10 +1,21 @@
-var asana = require('asana-api');
+#!/usr/bin/env node
 
-var oldProjectId = '11169835259592';
-var newProjectId = '12074713034917';
-var workspace = '498346170860';
+var asana = require('asana-api');
+var argv  = require('yargs')
+  .usage('Copy tasks from one Asana project to another\n Usage: $0 --new projectId --old projectId --workspace id --key ASANA_API_KEY')
+  .example('$0 --new 80586 --old 8086 --workspace 386 --key ACDCBAGTMWSIY')
+  .alias('n', 'new')
+  .alias('o', 'old')
+  .alias('w', 'workspace')
+  .alias('k', 'key')
+  .argv;
+
+var oldProjectId = argv.new;
+var newProjectId = argv.old;
+var workspace    = argv.workspace;
+
 var client = asana.createClient({
-  apiKey: process.env.ASANA_API_KEY
+  apiKey: argv.key
 });
 
 function createTask(task) {
@@ -26,9 +37,7 @@ client.projects.tasks(oldProjectId, function (err, tasks) {
   } else {
     tasks.forEach(function(task){
       if (task) {
-        if (task.name === '') {
-          task.name = 'blank';
-        }
+        if (task.name === '') { task.name = 'blank'; }
         setTimeout(createTask(task),5000);
       }
     });
