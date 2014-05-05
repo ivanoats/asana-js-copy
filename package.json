@@ -1,0 +1,24 @@
+{
+  "name": "asana-js-copy",
+  "version": "0.0.0",
+  "description": "copies tasks from one project to another",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ivanoats/asana-js-copy"
+  },
+  "keywords": [
+    "asana",
+    "import",
+    "export"
+  ],
+  "author": "Ivan Storck",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ivanoats/asana-js-copy/issues"
+  },
+  "homepage": "https://github.com/ivanoats/asana-js-copy"
+}
